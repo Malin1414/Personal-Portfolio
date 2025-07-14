@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Malin Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const textElement = document.querySelector('.typewriter span');
+        const words = ["Developer", "SE- Undergraduate", "UI Designer","Part-Time Visa Lodgement Officer"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150; 
+        let deletingSpeed = 80; 
+        let delayBetweenWords = 2000; 
+
+        function typeWriterEffect() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                textElement.textContent = currentWord.substring(0, charIndex--);
+            } else {
+                textElement.textContent = currentWord.substring(0, charIndex++);
+            }
+
+            let currentTypingSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentWord.length + 1) {
+                
+                currentTypingSpeed = delayBetweenWords;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === -1) {
+             
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length; 
+                currentTypingSpeed = typingSpeed; 
+            }
+
+            setTimeout(typeWriterEffect, currentTypingSpeed);
+        }
+
+        
+        typeWriterEffect();
+    });
+</script>
+
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Malin Fernando</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#content">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#basic-info">Basic Info</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#skills-education">Skills and Education</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#achievements">Achievements</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#projects">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#contact-details">Contact Details</a></div>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="photo.jpg" alt="">
+            </div>
+            <div class="content" id="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Malin</span></h1>
+                <div class="typewriter" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">I am a Software Engineering undergraduate at the University of Sri Jayewardenepura. My academic background has equipped me with strong analytical and problem-solving skills, which I apply to both my technical projects and my work in visa operations. I am passionate about technology, process optimization, and global education, and I am eager to explore opportunities where I can merge my expertise in software engineering with my experience in visa and immigration services.</p>
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="https://github.com/Malin1414" ><i class="fa-brands fa-github"></i></a>
+                    <a href="https://web.facebook.com/malin.fernando.2025"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/malin-fernando-4189881a6/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/MalinF93326"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                   <a href="CV.pdf" download="CV.pdf">
+                   <button>Download CV</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="basic-info">
+      <div class="container basic-info-container" data-aos="fade-up">
+        <h2>Basic Information</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <i class="fa-solid fa-user"></i>
+            <div><strong>Full Name:</strong>  Malin Fernando</div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-calendar-day"></i>
+            <div><strong>Date of Birth:</strong> August 28, 2002</div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-flag"></i>
+            <div><strong>Nationality:</strong> Sri Lankan</div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-language"></i>
+            <div><strong>Languages:</strong> English, Sinhala</div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div><strong>Location:</strong> Colombo, Sri Lanka</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="skills-education">
+      <div class="container" data-aos="fade-up">
+        <h2>Skills and Education</h2>
+        <div class="section-grid">
+          <div class="section-item">
+            <h3>Education</h3>
+            <p>Bachelor of Computing(Hons) in Software Engineering<br>University of Sri Jayewardenepura (USJP)</p>
+          </div>
+          <div class="section-item">
+            <h3>Technical Skills</h3>
+            <ul>
+              <li>Programming: HTML, CSS, JavaScript, Python, C++</li>
+              <li>Frameworks: Bootstrap, React (basic)</li>
+              <li>Tools: Git, VS Code, Canva, Figma</li>
+              <li>Database: MySQL (basic)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="achievements">
+      <div class="container" data-aos="fade-up">
+        <h2>Achievements</h2>
+        <div class="section-grid">
+          <div class="section-item">
+            <ul>
+              <li>Best Results _ G.C.E Advanced Level(1A & 2B)</li>
+              <li>Completed Google UX Design Certificate (Coursera)</li>
+              <li>2+ years part-time experience as a Visa Lodgment Officer</li>
+              <li>Presented research paper on Hybrid Network Topologies – 2025</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container" data-aos="fade-up">
+        <h2>Projects</h2>
+        <div class="section-grid">
+          <div class="section-item">
+            <h3>Student Management System</h3>
+            <p>Manages records for students including reports, search, and edit functions (C++).</p>
+          </div>
+          <div class="section-item">
+            <h3>JapuraFlix</h3>
+            <p>Web-based DVD rental service modeled with UML diagrams & DB.</p>
+          </div>
+          <div class="section-item">
+            <h3>Visa Consulting Website</h3>
+            <p>Currently in progress using HTML/CSS and SEO best practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact-details">
+      <div class="container" data-aos="fade-up">
+        <h2>Contact Details</h2>
+        <div class="section-grid">
+          <div class="section-item">
+            <p><strong>Email:</strong> sf148061@gmail.com</p>
+          </div>
+          <div class="section-item">
+            <p><strong>Phone:</strong> +94 777 173 102</p>
+          </div>
+          <div class="section-item">
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/malin-fernando-4189881a6/">linkedin.com/in/malinfernando</a></p>
+          </div>
+          <div class="section-item">
+            <p><strong>GitHub:</strong> <a href="https://github.com/Malin1414">github.com/malinfernando</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Copyrights Malin Fernando</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+    <script>
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(0px)"
+        }
+        function cancel(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(-500px)"
+        }
+
+       
+    </script>
+</body>
+</html>
